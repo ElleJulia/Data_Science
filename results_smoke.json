@@ -1,0 +1,70 @@
+{
+  "approach": "metric_learning_triplet",
+  "madrid_cv": {
+    "note": "skipped"
+  },
+  "zero_shot_amsterdam_f1": 0.28766306730203545,
+  "amsterdam_results": {
+    "prototype": {
+      "5": {
+        "mean": 0.440212669433467,
+        "std": 0.024064953090259765
+      },
+      "25": {
+        "mean": 0.48750326204453515,
+        "std": 0.038083330655499174
+      }
+    },
+    "shrinkage_prototype": {
+      "5": {
+        "mean": 0.4340620318361335,
+        "std": 0.039923802107851375
+      },
+      "25": {
+        "mean": 0.49148596542792705,
+        "std": 0.04122389999854595
+      }
+    },
+    "knn": {
+      "5": {
+        "mean": 0.34175674854947574,
+        "std": 0.02020432281368644
+      },
+      "25": {
+        "mean": 0.4481064340710794,
+        "std": 0.008205865617119898
+      }
+    }
+  },
+  "per_head_summary": {
+    "prototype": {
+      "avg_f1": 0.46385796573900107,
+      "peak_f1": 0.48750326204453515
+    },
+    "shrinkage_prototype": {
+      "avg_f1": 0.4627739986320303,
+      "peak_f1": 0.49148596542792705
+    },
+    "knn": {
+      "avg_f1": 0.39493159131027755,
+      "peak_f1": 0.4481064340710794
+    }
+  },
+  "best_head": "prototype",
+  "avg_f1": 0.46385796573900107,
+  "peak_f1": 0.48750326204453515,
+  "config": {
+    "seed": 42,
+    "n_trials": 3,
+    "n_folds": 5,
+    "n_repeats": 2,
+    "n_features": 176,
+    "embed_dim": 16,
+    "margin": 0.3,
+    "epochs": 20,
+    "knn_k": 5,
+    "architecture": "Dense(176)->Dense(64)->Dense(32)->Dense(16)->L2",
+    "loss": "batch-hard triplet",
+    "head": "prototype"
+  }
+}

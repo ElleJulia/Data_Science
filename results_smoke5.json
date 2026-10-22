@@ -1,0 +1,114 @@
+{
+  "approach": "metric_learning_triplet_coral_ordinal_ce",
+  "madrid_cv": {
+    "note": "skipped"
+  },
+  "zero_shot_amsterdam_f1": 0.5326744970211286,
+  "zero_shot_classifier_head_f1": 0.5753657347394656,
+  "amsterdam_results": {
+    "prototype": {
+      "5": {
+        "mean": 0.5989115126567377,
+        "std": 0.020026120478440455
+      },
+      "25": {
+        "mean": 0.6337489526766089,
+        "std": 0.013375991028349384
+      }
+    },
+    "shrinkage_prototype": {
+      "5": {
+        "mean": 0.5893559132117028,
+        "std": 0.019627134339590617
+      },
+      "25": {
+        "mean": 0.6227140587040868,
+        "std": 0.013044000750150192
+      }
+    },
+    "knn": {
+      "5": {
+        "mean": 0.5628480204755916,
+        "std": 0.03344787834663791
+      },
+      "25": {
+        "mean": 0.6237641113607783,
+        "std": 0.012938508674673131
+      }
+    },
+    "logistic": {
+      "5": {
+        "mean": 0.517726015446585,
+        "std": 0.01830846789606301
+      },
+      "25": {
+        "mean": 0.5837487451064254,
+        "std": 0.009979261171439706
+      }
+    },
+    "ordinal_emb": {
+      "5": {
+        "mean": 0.5408085881366166,
+        "std": 0.013480838493656451
+      },
+      "25": {
+        "mean": 0.6326582833463478,
+        "std": 0.011806401636302153
+      }
+    },
+    "self_training": {
+      "5": {
+        "mean": 0.6140466760547404,
+        "std": 0.0013073508225220944
+      },
+      "25": {
+        "mean": 0.6277359641348396,
+        "std": 0.0023031246102978146
+      }
+    }
+  },
+  "per_head_summary": {
+    "prototype": {
+      "avg_f1": 0.6163302326666733,
+      "peak_f1": 0.6337489526766089
+    },
+    "shrinkage_prototype": {
+      "avg_f1": 0.6060349859578948,
+      "peak_f1": 0.6227140587040868
+    },
+    "knn": {
+      "avg_f1": 0.5933060659181849,
+      "peak_f1": 0.6237641113607783
+    },
+    "logistic": {
+      "avg_f1": 0.5507373802765052,
+      "peak_f1": 0.5837487451064254
+    },
+    "ordinal_emb": {
+      "avg_f1": 0.5867334357414822,
+      "peak_f1": 0.6326582833463478
+    },
+    "self_training": {
+      "avg_f1": 0.62089132009479,
+      "peak_f1": 0.6277359641348396
+    }
+  },
+  "best_head": "self_training",
+  "avg_f1": 0.62089132009479,
+  "peak_f1": 0.6277359641348396,
+  "config": {
+    "seed": 42,
+    "n_trials": 3,
+    "n_folds": 5,
+    "n_repeats": 2,
+    "n_features": 176,
+    "embed_dim": 32,
+    "margin": 0.4,
+    "epochs": 20,
+    "coral_weight": 50.0,
+    "ce_weight": 1.0,
+    "knn_k": 5,
+    "scaler": "joint(Madrid+Amsterdam) unsupervised",
+    "loss": "batch-hard triplet (ordinal margin) + CE + CORAL"
+  }
+}
